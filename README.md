@@ -3,23 +3,23 @@
 This is the code that powers [www.writethedocs.org](http://www.writethedocs.org). It contains information
 about the Write the Docs group, as well as information about writing documentation.
 
-To contribute to the Write the Docs website, it's helpful to familiarize yourself with the [Sphinx site generator](https://www.sphinx-doc.org/), as well as [reStructuredText markup syntax](https://www.sphinx-doc.org/en/stable/rest.html).
+If you would like to contribute to the Write the Docs website, we recommend you familiarize yourself with both the [Sphinx site generator](https://www.sphinx-doc.org/) and the [reStructuredText markup syntax](https://www.sphinx-doc.org/en/stable/rest.html) (RST).
 
 ### Code Architecture
 
-All of the generated website lives inside the `docs` directory, but many files outside the `conf/` directory are just static RST, as in any other Sphinx project.
+The website is housed inside the `docs` directory, but many files outside the `conf/` directory are just static RST, as in any other Sphinx project.
 
-All RST files are rendered with [Jinja](http://jinja.pocoo.org/) which allows the use of Jinja tags in all of them. A few custom Jinja filters are available for things like generating photo paths for speakers.
+All RST files are rendered with [Jinja](http://jinja.pocoo.org/), which allows the use of Jinja tags. Custom Jinja filters are available for things like generating photo paths for speakers.
 
 ### Conference pages
 
-For conferences, see [the conference site documentation](https://www.writethedocs.org/organizer-guide/confs/website/).
+For information about Write the Docs conferences, see [the conference site documentation](https://www.writethedocs.org/organizer-guide/confs/website/).
 
 ### Videos
 
 An even more fragile process which needs documenting and fixing.
 
-WIP Docs on how to do this:
+Work-in-progress Docs on how to do this:
 
 1. In `_data/<year>.<city>.speakers.yaml`, add a `youtubeId: 12345678901` key value pair to each talk.
 
@@ -27,7 +27,7 @@ WIP Docs on how to do this:
 
 3. In the [venv](#prerequisites-for-generating-the-docs-locally) switch to the `docs` directory and run `BUILD_VIDEOS=True make html`.
 
-4. Commit the the *relevant* changed files:
+4. Commit the *relevant* changed files:
 
    * `docs/videos/index.rst`
    * `_data/<year>.<city>.speakers.yaml`
@@ -95,7 +95,7 @@ and instructions on how to update it are in the [`README.md`](https://github.com
 
 ### Updating CSS for the 2018 Theme
 
-The website for 2018 uses SASS to compile all the assets it has. To modify the theme, you must first install the dependencies of
+The 2018 website uses SASS to compile all its assets. To modify the theme, you must first install the dependencies of
 `gulp`. In the main directory, run:
 
 ```
@@ -103,7 +103,7 @@ npm install
 ```
 
 With that you will install all the requirements to minify your CSS;
-after that you only need to run:
+after that, you only need to run:
 
 ```
 # Generate everything and serve site
@@ -113,7 +113,7 @@ gulp
 gulp styles
 ```
 
-This has to be used alongside the sphinx server and it will
+This has to be used alongside the Sphinx server, and it will
 automatically minify all the content in your `.scss` files to the
 `main.min.css` file. Also, `gulp` will be running browserify, allowing you
 to see the CSS changes immediately in the browser.
