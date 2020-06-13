@@ -47,7 +47,7 @@ Here are our latest events, and we hope to see you online or in person soon!
 
 .. include:: include/conf/current.rst
 
-.. So that Sphinx doesn't yell as us :)
+.. So that Sphinx doesn't yell at us :)
 
 .. toctree::
    :hidden:
